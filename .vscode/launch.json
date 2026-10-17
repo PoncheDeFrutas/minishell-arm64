@@ -1,0 +1,57 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ARM64: Debug QEMU",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/minishell",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "miDebuggerServerAddress": "localhost:1234",
+            "stopAtEntry": true,
+            "externalConsole": false,
+            "setupCommands": [
+                {
+                    "text": "set architecture aarch64"
+                },
+                {
+                    "text": "set disassemble-next-line on"
+                },
+                {
+                    "text": "set step-mode on"
+                },
+                {
+                    "text": "set pagination off"
+                }
+            ]
+        },
+        {
+            "name": "ARM64: Debug Native",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/minishell",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "ARM64: Build Native",
+            "stopAtEntry": true,
+            "externalConsole": false,
+            "setupCommands": [
+                {
+                    "text": "set architecture aarch64"
+                },
+                {
+                    "text": "set disassemble-next-line on"
+                },
+                {
+                    "text": "set step-mode on"
+                },
+                {
+                    "text": "set pagination off"
+                }
+            ]
+        }
+    ]
+}

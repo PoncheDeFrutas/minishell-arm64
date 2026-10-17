@@ -1,0 +1,5 @@
+{
+    "cSpell.enabled": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "terminal.integrated.cwd": "${workspaceFolder}",
+}
